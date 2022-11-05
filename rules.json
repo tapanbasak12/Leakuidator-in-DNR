@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {"urlFilter": "google.com", "resourceTypes": ["main_frame"] }
+  },
+
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "allow" },
+    "condition": { "urlFilter": "google.com/123", "resourceTypes": ["main_frame"] }
+  },
+
+  {
+    "id": 3,
+    "priority": 2,
+    "action": { "type": "block" },
+    "condition": { "urlFilter": "google.com/12345", "resourceTypes": ["main_frame"] }
+  },
+  
+  {
+    "id": 4,
+    "priority": 1,
+    "action": { "type": "redirect", "redirect": { "url": "https://twitter.com" } },
+    "condition": { "urlFilter": "facebook.com", "resourceTypes": ["main_frame"] }
+  },
+
+  {
+    "id": 10,
+    "priority": 2,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        { "header": "cookie", "operation": "remove" }
+        
+      ]
+    },
+    "condition": { "urlFilter": "wikipedia.org", "resourceTypes": ["main_frame"] }
+  }
+
+  
+]
