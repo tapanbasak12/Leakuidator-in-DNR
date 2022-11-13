@@ -1,6 +1,7 @@
 {
     "name": "DNR extension",
     "version": "1",
+
     "declarative_net_request": {
       "rule_resources": [{
         "id": "ruleset_1",
@@ -8,11 +9,20 @@
         "path": "rules.json"
       }]
     },
+
     "permissions": [
       "declarativeNetRequest",
       "declarativeNetRequestWithHostAccess",
-      "declarativeNetRequestFeedback",
-      "*://*/*"
+      "declarativeNetRequestFeedback"
     ],
-    "manifest_version": 2
+    
+    "host_permissions": [
+      "<all_urls>"
+    ],
+
+    "background": {
+      "service_worker": "background.js"
+    },
+
+    "manifest_version": 3
   }

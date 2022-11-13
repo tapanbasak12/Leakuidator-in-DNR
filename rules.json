@@ -3,14 +3,14 @@
     "id": 1,
     "priority": 1,
     "action": { "type": "block" },
-    "condition": {"urlFilter": "google.com", "resourceTypes": ["main_frame"] }
+    "condition": {"urlFilter": "wikipedia.org", "resourceTypes": ["main_frame"] }
   },
 
   {
     "id": 2,
     "priority": 1,
     "action": { "type": "allow" },
-    "condition": { "urlFilter": "google.com/123", "resourceTypes": ["main_frame"] }
+    "condition": { "urlFilter": "it.wikipedia.org", "resourceTypes": ["main_frame"] }
   },
 
   {
@@ -28,6 +28,36 @@
   },
 
   {
+    "id": 5,
+    "priority": 1,
+    "action": { "type": "redirect", "redirect": { "extensionPath": "/a.jpg" } },
+    "condition": { "urlFilter": "abcd.com", "resourceTypes": ["main_frame"] }
+  },
+
+  {
+    "id": 6,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": { "scheme": "https", "host": "twitter.com" }
+      }
+    },
+    "condition": { "urlFilter": "||example.com", "resourceTypes": ["main_frame"] }
+  },
+
+  {
+    "id" : 8,
+    "priority": 1,
+    "action" : {
+      "type" : "allowAllRequests"
+    },
+    "condition" : {
+      "urlFilter" : "wikipedia.org", "resourceTypes" : ["main_frame"]
+    }
+  },
+
+  {
     "id": 10,
     "priority": 2,
     "action": {
@@ -38,6 +68,39 @@
       ]
     },
     "condition": { "urlFilter": "wikipedia.org", "resourceTypes": ["main_frame"] }
+  },
+ 
+  {
+    "id": 11,
+    "priority": 5,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        { "header": "cookie", "operation": "set", "value":"check"}        
+      ]
+    },
+    "condition": { "urlFilter": "wikipedia.org", "resourceTypes": ["main_frame"] }
+  },
+  {
+    "id": 15,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "responseHeaders": [
+        { "header": "date", "operation": "set", "value":"Fake Date"}        
+      ]
+    },
+    "condition": { "urlFilter": "wikipedia.org", "resourceTypes": ["main_frame"] }
+  },
+  {
+    "id" : 12,
+    "priority": 1,
+    "action" : { "type" : "block" },
+    "condition" : {
+      "urlFilter" : "wikipedia.org",
+      "domains" : ["wikipedia.org"],
+      "resourceTypes" : ["image"]
+    }
   }
 
   
