@@ -1,0 +1,30 @@
+[
+    {
+        "id": 100,
+        "priority": 1,
+        "action": {
+          "type": "modifyHeaders",
+          "requestHeaders": [
+            { "header": "cookie", "operation": "remove" }
+            
+          ]
+        },
+        "condition": { "urlFilter": "wikipedia.org", "resourceTypes": ["main_frame"] }
+      },
+
+      {
+        "id": 200,
+        "priority": 5,
+        "action": {
+          "type": "modifyHeaders",
+          "requestHeaders": [
+            { "header": "cookie", "operation": "remove" }
+            
+          ]
+        },
+        "condition": { "urlFilter": "njiticc", "resourceTypes": ["main_frame"] }
+      }
+
+      
+
+]

@@ -6,14 +6,15 @@
       "rule_resources": [{
         "id": "ruleset_1",
         "enabled": true,
-        "path": "rules.json"
+        "path": "rules2.json"
       }]
     },
 
     "permissions": [
       "declarativeNetRequest",
       "declarativeNetRequestWithHostAccess",
-      "declarativeNetRequestFeedback"
+      "declarativeNetRequestFeedback",
+      "webRequest"
     ],
     
     "host_permissions": [
@@ -21,7 +22,8 @@
     ],
 
     "background": {
-      "service_worker": "background.js"
+      "service_worker": "background.js",
+      "type": "module"
     },
 
     "manifest_version": 3
