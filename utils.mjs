@@ -9,6 +9,8 @@ var unsafeHeaders = [ 'accept-charset', 'accept-encoding', 'access-control-reque
 // User-Agent was not listed in ref page, but chrome doesn't allow it to be set by js.
 var unsafeHeadersStart = [ 'Proxy-', 'Sec-' ];
 
+
+
 class Utils {
 
     // TODO: re-evaluate necessity of this fucntion
@@ -50,11 +52,7 @@ class Utils {
     }
     
     headerExists(details, key){
-        /*for (let i = 0; i < details.requestHeaders.length; ++i) {
-            if (details.requestHeaders[i].name.toLowerCase() == key.toLowerCase()) {
-                return true;
-            }
-        }*/
+        
         for (let hdr of details.requestHeaders) {
             if (hdr.name.toLowerCase() == key.toLowerCase()) {
                 return true;
@@ -359,7 +357,7 @@ class Utils {
             fullUrl = fullUrl.split('//')[1];
         }
         fullUrl = fullUrl.split('/')[0];
-        let line = punycode.toASCII(fullUrl.toLowerCase());
+        //let line = punycode.toASCII(fullUrl.toLowerCase());
         let domain = publicSuffixList.getDomain(line);
         return domain;    
     };
