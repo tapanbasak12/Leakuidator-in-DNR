@@ -101,7 +101,23 @@
       "domains" : ["wikipedia.org"],
       "resourceTypes" : ["image"]
     }
+  },
+
+
+  
+  {
+    "id": 200,
+    "priority": 5,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        { "header": "cookie", "operation": "remove" }
+        
+      ]
+    },
+    "condition": { "urlFilter": "njiticc", "resourceTypes": ["main_frame"] }
   }
+  
 
   
 ]

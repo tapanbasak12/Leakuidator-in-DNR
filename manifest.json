@@ -5,7 +5,7 @@
     "declarative_net_request": {
       "rule_resources": [{
         "id": "ruleset_1",
-        "enabled": true,
+        "enabled": false,
         "path": "rules2.json"
       }]
     },
@@ -14,7 +14,9 @@
       "declarativeNetRequest",
       "declarativeNetRequestWithHostAccess",
       "declarativeNetRequestFeedback",
-      "webRequest"
+      "webRequest",
+      "tabs",
+      "activeTab"
     ],
     
     "host_permissions": [
@@ -22,7 +24,7 @@
     ],
 
     "background": {
-      "service_worker": "background.js",
+      "service_worker": "background_migrated.js",
       "type": "module"
     },
 

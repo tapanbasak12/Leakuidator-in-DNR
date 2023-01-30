@@ -64,7 +64,7 @@ class Utils {
     // TODO: remove printHeaders func if there is no use
     printHeaders(details){
         for (let i = 0; i < details.requestHeaders.length; ++i) {
-            console.log( details.requestId +  " header name : " + details.requestHeaders[i].name.toLowerCase() + " header value: " + details.requestHeaders[i].value.toLowerCase());
+            console.log( "REQUEST ID:" + details.requestId +  " HEADER NAME : " + details.requestHeaders[i].name.toLowerCase() + " Header Value: " + details.requestHeaders[i].value.toLowerCase());
         }
     }
     
@@ -142,6 +142,12 @@ class Utils {
         return copiedHeaders
     }
     
+    getDomainFromURl(url) {
+        let domain = (new URL(url));
+        domain = domain.hostname;
+        return domain;
+    }
+
     /**
      * return headers that are not unsafe
      * @todo {improve complexity (hashmap and trie)}
@@ -357,7 +363,7 @@ class Utils {
             fullUrl = fullUrl.split('//')[1];
         }
         fullUrl = fullUrl.split('/')[0];
-        //let line = punycode.toASCII(fullUrl.toLowerCase());
+        let line = punycode.toASCII(fullUrl.toLowerCase());
         let domain = publicSuffixList.getDomain(line);
         return domain;    
     };

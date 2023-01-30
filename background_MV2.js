@@ -33,7 +33,7 @@ var navigation = [];
 var tabPendingUrl = []; // is the tab in a pending state?
 var corwc = []; // check if the request is cross origin/site with cookie
 var firstResponseHeaders = []; // response headers for the first requests with cookies removed
-var xhrData = []; // data related to second request with cookies included
+var xhrData = []; // data related to second request with cookies included //XmlHTTPRequest Data
 var tabrelations = []; // used to track relations between tabs/windows
 var occured = []; // tracks whether a request ID has been observed before
 
